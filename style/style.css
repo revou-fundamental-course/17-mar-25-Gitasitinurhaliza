@@ -51,6 +51,10 @@ header {
   background-color: #0056b3;
 }
 
+.button-container {
+  padding-bottom: 20px;
+}
+
 /* Container */
 .container {
   width: 40%;
@@ -122,10 +126,10 @@ input {
 
 /* Button Wrapper */
 .button-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 /* Hitung Button di Tengah */
@@ -144,23 +148,24 @@ input {
 }
 
 .btn.hitung {
-    flex-grow: 1;
-    text-align: center;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .btn.reset {
-    margin-left: auto;
-    flex-grow: 1;
+  margin-left: auto;
+  flex-grow: 1;
 }
 
 /* Sembunyikan hasil perhitungan sebelum ada input */
-#hasil-luas, #hasil-keliling {
-    display: none;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+#hasil-luas,
+#hasil-keliling {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* Hide Element */
