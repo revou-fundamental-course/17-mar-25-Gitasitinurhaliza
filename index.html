@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katik - Kalkulator Matematik</title>
+    <link rel="stylesheet" href="./style/syle.css" />
+    <script defer src="./js/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><span class="brand">Katik</span> Kalkulator Matematik</h1>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h2>Welcome to Katik</h2>
+        <p>Hai Sobat, Selamat datang di Katik :)</p>
+        <p>
+          Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas
+          dan keliling bangun datar.
+        </p>
+      </section>
+
+      <div class="container">
+        <h1>Kalkulator Luas & Keliling Persegi</h1>
+
+        <div class="button-container">
+          <button
+            id="luasBtn"
+            class="toggle-btn active"
+            onclick="showSection('luas')"
+          >
+            Luas
+          </button>
+          <button
+            id="kelilingBtn"
+            class="toggle-btn"
+            onclick="showSection('keliling')"
+          >
+            Keliling
+          </button>
+        </div>
+
+        <!-- Luas Persegi -->
+        <div class="card" id="luas-container">
+          <h2>Luas Persegi</h2>
+          <img src="./image/persegi2.jpg" alt="Luas Persegi" />
+          <p class="text-left">Rumus Luas Persegi:</p>
+          <p><strong>L = S × S</strong></p>
+          <p class="text-left"><b>Dimana:</b></p>
+          <p class="text-left">
+            <b>L</b> = Luas <br />
+            <b>S</b> = Sisi
+          </p>
+          <h3>Hitung Luas</h3>
+          <form id="luas-form">
+            <input
+              type="number"
+              id="sisi-luas"
+              placeholder="Masukkan nilai sisi"
+              required
+            />
+            <div id="hasil-luas" class="hasil"></div>
+            <div class="button-wrapper">
+              <button type="submit" class="btn hitung">Hitung</button>
+              <button type="reset" class="btn reset">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Keliling Persegi -->
+        <div class="card" id="keliling-container">
+          <h2>Keliling Persegi</h2>
+          <img src="./image/Persegi.png" alt="Keliling Persegi" />
+          <p class="text-left">Rumus Keliling Persegi:</p>
+          <p><strong>K = 4 × S</strong></p>
+          <p class="text-left"><b>Dimana:</b></p>
+          <p class="text-left">
+            <b>K</b> = Keliling <br />
+            <b>S</b> = Sisi
+          </p>
+          <h3>Hitung Keliling</h3>
+          <form id="keliling-form">
+            <input
+              type="number"
+              id="sisi-keliling"
+              placeholder="Masukkan nilai sisi"
+              required
+            />
+            <div id="hasil-keliling" class="hasil"></div>
+            <div class="button-wrapper">
+              <button type="submit" class="btn hitung">Hitung</button>
+              <button type="reset" class="btn reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

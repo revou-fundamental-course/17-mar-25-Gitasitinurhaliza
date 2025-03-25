@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background: #007bff;
+  color: white;
+  padding: 15px 0;
+  font-size: 20px;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+/* Intro Section */
+.intro {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Sembunyikan keliling secara default */
+#keliling-container {
+  display: none;
+}
+
+/* Tombol Aktif */
+.toggle-btn {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  background-color: #007bff;
+  color: white;
+}
+
+.toggle-btn.active {
+  background-color: #0056b3;
+}
+
+/* Container */
+.container {
+  width: 40%;
+  min-width: 300px;
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styles */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Heading Styles */
+h2 {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Image */
+img {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin: 10px auto;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Button */
+.btn {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+}
+
+/* Button Wrapper */
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Hitung Button di Tengah */
+.hitung {
+  background: #28a745;
+  color: white;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Reset Button di Pojok Kanan */
+.reset {
+  background: #dc3545;
+  color: white;
+  margin-left: auto;
+}
+
+.btn.hitung {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.btn.reset {
+    margin-left: auto;
+    flex-grow: 1;
+}
+
+/* Sembunyikan hasil perhitungan sebelum ada input */
+#hasil-luas, #hasil-keliling {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Hide Element */
+.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  input,
+  .btn {
+    width: 100%;
+  }
+}
