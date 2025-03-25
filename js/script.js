@@ -1,67 +1,110 @@
 function showSection(section) {
-    let luasContainer = document.getElementById("luas-container");
-    let kelilingContainer = document.getElementById("keliling-container");
+    let shape = document.getElementById("shapeSelect").value;
 
-    let luasBtn = document.getElementById("luasBtn");
-    let kelilingBtn = document.getElementById("kelilingBtn");
+    let sections = {
+        persegi: { luas: "luas-container", keliling: "keliling-container" },
+        panjang: { luas: "luas-panjang-container", keliling: "keliling-panjang-container" },
+    };
 
-    if (section === "luas") {
-        luasContainer.style.display = "block";
-        kelilingContainer.style.display = "none";
-        luasBtn.classList.add("active");
-        kelilingBtn.classList.remove("active");
-    } else {
-        luasContainer.style.display = "none";
-        kelilingContainer.style.display = "block";
-        kelilingBtn.classList.add("active");
-        luasBtn.classList.remove("active");
-    }
+    Object.values(sections.persegi).concat(Object.values(sections.panjang)).forEach(id => {
+        document.getElementById(id).style.display = "none";
+    });
+
+    document.getElementById(sections[shape][section]).style.display = "block";
+
+    document.getElementById("luasBtn").classList.toggle("active", section === "luas");
+    document.getElementById("kelilingBtn").classList.toggle("active", section === "keliling");
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("shapeSelect").value = "persegi"; 
+    showSection("luas");
+});
+
+document.getElementById("shapeSelect").addEventListener("change", function () {
+    showSection("luas");
+});
+
+// Luas Persegi
 document.getElementById("luas-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    let sisiInput = document.getElementById("sisi-luas");
-    let hasilLuas = document.getElementById("hasil-luas");
+    let sisi = parseFloat(document.getElementById("sisi-luas").value.trim());
+    let hasil = document.getElementById("hasil-luas");
 
-    let sisi = sisiInput.value.trim();
-    
     if (!sisi || isNaN(sisi) || sisi <= 0) {
-        hasilLuas.innerHTML = `<strong style="color: red;">Masukkan angka yang valid!</strong>`;
-        hasilLuas.style.display = "block";
+        hasil.innerHTML = `<strong style="color: red;">Masukkan angka yang valid!</strong>`;
+        hasil.style.display = "block";
         return;
     }
 
     let luas = sisi * sisi;
-    hasilLuas.innerHTML = `<strong>Hasil:</strong> Luas = ${sisi} × ${sisi} = <b>${luas}</b>`;
-    hasilLuas.style.display = "block";
+    hasil.innerHTML = `<strong>Hasil:</strong><br> L = S × S <br>L = ${sisi} × ${sisi} <br>L = <b>${luas}</b>`;
+    hasil.style.display = "block";
 });
 
+// Keliling Persegi
 document.getElementById("keliling-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    let sisiInput = document.getElementById("sisi-keliling");
-    let hasilKeliling = document.getElementById("hasil-keliling");
+    let sisi = parseFloat(document.getElementById("sisi-keliling").value.trim());
+    let hasil = document.getElementById("hasil-keliling");
 
-    let sisi = sisiInput.value.trim();
-    
     if (!sisi || isNaN(sisi) || sisi <= 0) {
-        hasilKeliling.innerHTML = `<strong style="color: red;">Masukkan angka yang valid!</strong>`;
-        hasilKeliling.style.display = "block";
+        hasil.innerHTML = `<strong style="color: red;">Masukkan angka yang valid!</strong>`;
+        hasil.style.display = "block";
         return;
     }
 
     let keliling = 4 * sisi;
-    hasilKeliling.innerHTML = `<strong>Hasil:</strong> Keliling = 4 × ${sisi} = <b>${keliling}</b>`;
-    hasilKeliling.style.display = "block";
+    hasil.innerHTML = `<strong>Hasil:</strong><br> K = 4 × S <br>K = 4 × ${sisi} <br>K = <b>${keliling}</b>`;
+    hasil.style.display = "block";
 });
 
-document.querySelectorAll("button[type='reset']").forEach(button => {
-    button.addEventListener("click", function() {
-        let form = this.closest("form");
-        let hasilDiv = form.querySelector(".hasil");
+// Luas Persegi Panjang
+document.getElementById("luas-panjang-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    let panjang = parseFloat(document.getElementById("panjang-luas").value.trim());
+    let lebar = parseFloat(document.getElementById("lebar-luas").value.trim());
+    let hasil = document.getElementById("hasil-luas-panjang");
 
-        if (hasilDiv) {
-            hasilDiv.innerHTML = "";
-            hasilDiv.style.display = "none";
+    if (!panjang || isNaN(panjang) || panjang <= 0 || !lebar || isNaN(lebar) || lebar <= 0) {
+        hasil.innerHTML = `<strong style="color: red;">Masukkan angka yang valid!</strong>`;
+        hasil.style.display = "block";
+        return;
+    }
+
+    let luas = panjang * lebar;
+    hasil.innerHTML = `<strong>Hasil:</strong><br> L = P × L <br>L = ${panjang} × ${lebar} <br>L = <b>${luas}</b>`;
+    hasil.style.display = "block";
+});
+
+// Keliling Persegi Panjang
+document.getElementById("keliling-panjang-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    let panjang = parseFloat(document.getElementById("panjang-keliling").value.trim());
+    let lebar = parseFloat(document.getElementById("lebar-keliling").value.trim());
+    let hasil = document.getElementById("hasil-keliling-panjang");
+
+    if (!panjang || isNaN(panjang) || panjang <= 0 || !lebar || isNaN(lebar) || lebar <= 0) {
+        hasil.innerHTML = `<strong style="color: red;">Masukkan angka yang valid!</strong>`;
+        hasil.style.display = "block";
+        return;
+    }
+
+    let jumlah = panjang + lebar;
+    let keliling = 2 * jumlah;
+    hasil.innerHTML = `<strong>Hasil:</strong><br> K = 2 × (P + L) <br>K = 2 × (${panjang} + ${lebar}) <br>K = 2 × ${jumlah} <br>K = <b>${keliling}</b>`;
+    hasil.style.display = "block";
+});
+
+// Reset
+document.querySelectorAll("button[type='reset']").forEach(button => {
+    button.addEventListener("click", function () {
+        let form = this.closest("form");
+        let hasil = form.querySelector(".hasil");
+
+        if (hasil) {
+            hasil.innerHTML = "";
+            hasil.style.display = "none";
         }
 
         form.reset();

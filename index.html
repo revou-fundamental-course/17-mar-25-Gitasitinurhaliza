@@ -23,7 +23,18 @@
       </section>
 
       <div class="container">
-        <h1>Kalkulator Persegi</h1>
+        <h1>Kalkulator Bangun Datar</h1>
+
+        <div class="bttn-container">
+          <select
+            id="shapeSelect"
+            class="toggle-select"
+            onchange="showSection(this.value)"
+          >
+            <option value="persegi">Persegi</option>
+            <option value="panjang">Persegi Panjang</option>
+          </select>
+        </div>
 
         <div class="button-container">
           <button
@@ -89,6 +100,77 @@
               required
             />
             <div id="hasil-keliling" class="hasil"></div>
+            <div class="button-wrapper">
+              <button type="submit" class="btn hitung">Hitung</button>
+              <button type="reset" class="btn reset">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Luas Persegi Panjang -->
+        <div class="card" id="luas-panjang-container">
+          <h2>Luas Persegi Panjang</h2>
+          <img src="https://images.bisnis.com/posts/2023/02/25/1631651/2._ini_rumus_luas_persegi_panjang_dan_contoh_soalnya_(dok._nuraini).jpg" alt="Luas Persegi Panjang" />
+          <p class="text-left">Rumus Luas Persegi Panjang:</p>
+          <p><strong>L = P × L</strong></p>
+          <p class="text-left"><b>Dimana:</b></p>
+          <p class="text-left">
+            <b>L</b> = Luas <br />
+            <b>P</b> = Panjang <br />
+            <b>L</b> = Lebar
+          </p>
+          <h3>Hitung Luas</h3>
+          <form id="luas-panjang-form">
+            <input
+              type="number"
+              id="panjang-luas"
+              placeholder="Masukkan nilai panjang"
+              required
+            />
+            <input
+              type="number"
+              id="lebar-luas"
+              placeholder="Masukkan nilai lebar"
+              required
+            />
+            <div id="hasil-luas-panjang" class="hasil"></div>
+            <div class="button-wrapper">
+              <button type="submit" class="btn hitung">Hitung</button>
+              <button type="reset" class="btn reset">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Keliling Persegi Panjang -->
+        <div class="card" id="keliling-panjang-container">
+          <h2>Keliling Persegi Panjang</h2>
+          <img
+            src="https://images.bisnis.com/posts/2023/02/25/1631651/2._ini_rumus_luas_persegi_panjang_dan_contoh_soalnya_(dok._nuraini).jpg"
+            alt="Keliling Persegi Panjang"
+          />
+          <p class="text-left">Rumus Keliling Persegi Panjang:</p>
+          <p><strong>K = 2 × (P + L)</strong></p>
+          <p class="text-left"><b>Dimana:</b></p>
+          <p class="text-left">
+            <b>K</b> = Keliling <br />
+            <b>P</b> = Panjang <br />
+            <b>L</b> = Lebar
+          </p>
+          <h3>Hitung Keliling</h3>
+          <form id="keliling-panjang-form">
+            <input
+              type="number"
+              id="panjang-keliling"
+              placeholder="Masukkan nilai panjang"
+              required
+            />
+            <input
+              type="number"
+              id="lebar-keliling"
+              placeholder="Masukkan nilai lebar"
+              required
+            />
+            <div id="hasil-keliling-panjang" class="hasil"></div>
             <div class="button-wrapper">
               <button type="submit" class="btn hitung">Hitung</button>
               <button type="reset" class="btn reset">Reset</button>

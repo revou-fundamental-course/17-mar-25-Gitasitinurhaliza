@@ -27,6 +27,38 @@ header {
   max-width: 600px;
 }
 
+/* Container untuk dropdown */
+.bttn-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Style untuk dropdown select */
+.toggle-select {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+}
+
+/* Hover effect */
+.toggle-select:hover {
+  color: black;
+}
+
+/* Focus effect */
+.toggle-select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+
 #keliling-container {
   display: none;
 }
@@ -143,8 +175,7 @@ input {
   flex-grow: 1;
 }
 
-#hasil-luas,
-#hasil-keliling {
+.hasil {
   display: none;
   margin-top: 10px;
   padding: 10px;
